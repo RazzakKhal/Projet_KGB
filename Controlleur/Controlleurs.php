@@ -1,19 +1,14 @@
 <?php
 
-function AcceuilControlleur()
+function AccueilControlleur()
 {
-    echo ('dans mon acceuil');
-    require('Vue/acceuil.php');
+
+    require('Vue/accueil.php');
 }
 
 function BackControlleur()
 {
     require('Vue/back.php');
-}
-
-function MissionControlleur()
-{
-    require('Vue/mission.php');
 }
 
 function DetailControlleur()

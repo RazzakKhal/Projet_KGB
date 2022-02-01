@@ -1,7 +1,8 @@
 <?php
 
 
-class Agent{
+class Agent
+{
     private string $nom;
     private string $prenom;
     private int $date;
@@ -9,65 +10,72 @@ class Agent{
     private string $nationalite;
     private string $specialites;
 
-    public function __construct(string $nom, string $prenom, int $date, int $code, string $nationalite, string $specialites){
+    public function __construct(string $nom, string $prenom, int $date, int $code, string $nationalite, string $specialites)
+    {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->date = $date;
         $this->code = $code;
         $this->nationalite = $nationalite;
         $this->specialites = $specialites;
-
     }
-//nom
-    public function getNom(){
+    //nom
+    public function getNom()
+    {
         return $this->nom;
     }
 
-    public function setNom($nom){
-        return $this->nom = $nom;
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
     }
-//prenom
-    public function getPrenom(){
+    //prenom
+    public function getPrenom()
+    {
         return $this->prenom;
     }
 
-    public function setPrenom($prenom){
-        return $this->prenom = $prenom;
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
     }
-//date
-    public function getDate(){
+    //date
+    public function getDate()
+    {
         return $this->date;
     }
-    public function setDate($date){
-        return $this->date = $date;
+    public function setDate($date)
+    {
+        $this->date = $date;
     }
-//code
-    
-    public function getCode(){
+    //code
+
+    public function getCode()
+    {
         return $this->code;
     }
-    public function setCode($code){
-        return $this->code = $code;
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
-//nationalité
-    
-    public function getNationalite(){
+    //nationalité
+
+    public function getNationalite()
+    {
         return $this->nationalite;
     }
-    public function setNationalite($nationalite){
-        return $this->nationalite = $nationalite;
+    public function setNationalite($nationalite)
+    {
+        $this->nationalite = $nationalite;
     }
-//specialités
-    
-    public function getSpecialites(){
+    //specialités
+
+    public function getSpecialites()
+    {
         return $this->specialites;
     }
-    public function setSpecialites($specialites){
-        return $this->specialites = $specialites;
+    public function setSpecialites($specialites)
+    {
+        $this->specialites = $specialites;
     }
-
-
-
-
-
 }

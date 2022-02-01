@@ -7,17 +7,17 @@ class Mission
     private string $description;
     private string $nomcode;
     private string $pays;
-    private Agent $agent;
-    private Contact $contact;
-    private Cible $cible;
+    private array $agent = [];
+    private array $contact = [];
+    private array $cible = [];
     private string $type;
     private string $statut;
-    private string $specialites;
+    private array $specialites = [];
     private int $datedebut;
     private int $datefin;
-    private Planque $planque;
+    private array $planque = [];
 
-    public function __construct(int $id, string $titre, string $description, string $nomcode, string $pays, Agent $agent, Contact $contact, Cible $cible, string $type, string $statut, string $specialites, int $datedebut, int $datefin, Planque $planque)
+    public function __construct(int $id, string $titre, string $description, string $nomcode, string $pays, array $agent, array $contact, array $cible, string $type, string $statut, array $specialites, int $datedebut, int $datefin, array $planque)
     {
 
 
@@ -34,6 +34,7 @@ class Mission
         $this->specialites = $specialites;
         $this->datedebut = $datedebut;
         $this->datefin = $datefin;
+        $this->planque = $planque;
     }
 
     //id
@@ -44,7 +45,7 @@ class Mission
 
     public function setId($id)
     {
-        return $this->id = $id;
+        $this->id = $id;
     }
     //titre
     public function getTitre()
@@ -54,7 +55,7 @@ class Mission
 
     public function setTitre($titre)
     {
-        return $this->titre = $titre;
+        $this->titre = $titre;
     }
     //description
     public function getDescription()
@@ -63,7 +64,7 @@ class Mission
     }
     public function setDescription($description)
     {
-        return $this->description = $description;
+        $this->description = $description;
     }
     //nomcode
 
@@ -73,7 +74,7 @@ class Mission
     }
     public function setNomcode($nomcode)
     {
-        return $this->nomcode = $nomcode;
+        $this->nomcode = $nomcode;
     }
     //pays
 
@@ -83,7 +84,7 @@ class Mission
     }
     public function setPays($pays)
     {
-        return $this->pays = $pays;
+        $this->pays = $pays;
     }
     //agent
 
@@ -93,7 +94,7 @@ class Mission
     }
     public function setAgent($agent)
     {
-        return $this->agent = $agent;
+        $this->agent = $agent;
     }
     //contact
     public function getContact()
@@ -103,7 +104,7 @@ class Mission
 
     public function setContact($contact)
     {
-        return $this->contact = $contact;
+        $this->contact = $contact;
     }
     //cible
     public function getCible()
@@ -113,7 +114,7 @@ class Mission
 
     public function setCible($cible)
     {
-        return $this->cible = $cible;
+        $this->cible = $cible;
     }
     //type
     public function getType()
@@ -122,7 +123,7 @@ class Mission
     }
     public function setType($type)
     {
-        return $this->type = $type;
+        $this->type = $type;
     }
     //statut
 
@@ -132,7 +133,7 @@ class Mission
     }
     public function setStatut($statut)
     {
-        return $this->statut = $statut;
+        $this->statut = $statut;
     }
     //specialite
 
@@ -142,7 +143,7 @@ class Mission
     }
     public function setSpecialites($specialites)
     {
-        return $this->specialites = $specialites;
+        $this->specialites = $specialites;
     }
     //datedebut
 
@@ -152,7 +153,7 @@ class Mission
     }
     public function setDatedebut($datedebut)
     {
-        return $this->datedebut = $datedebut;
+        $this->datedebut = $datedebut;
     }
 
     //datefin
@@ -163,7 +164,7 @@ class Mission
     }
     public function setDatefin($datefin)
     {
-        return $this->datefin = $datefin;
+        $this->datefin = $datefin;
     }
 
     //planque
@@ -174,6 +175,6 @@ class Mission
     }
     public function setPlanque($planque)
     {
-        return $this->planque = $planque;
+        $this->planque = $planque;
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
 
-class Cible{
+class Cible
+{
     private int $id;
     private string $nom;
     private string $prenom;
@@ -10,7 +11,8 @@ class Cible{
     private string $nationalite;
 
 
-    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite, string $specialites){
+    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite, string $specialites)
+    {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->date = $date;
@@ -19,52 +21,62 @@ class Cible{
     }
 
     //id
-    
-    public function getId(){
+
+    public function getId()
+    {
         return $this->id;
     }
-    public function setId($id){
-        return $this->id = $id;
+    public function setId($id)
+    {
+        $this->id = $id;
     }
-//nom
-    public function getNom(){
+    //nom
+    public function getNom()
+    {
         return $this->nom;
     }
 
-    public function setNom($nom){
-        return $this->nom = $nom;
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
     }
-//prenom
-    public function getPrenom(){
+    //prenom
+    public function getPrenom()
+    {
         return $this->prenom;
     }
 
-    public function setPrenom($prenom){
-        return $this->prenom = $prenom;
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
     }
-//date
-    public function getDate(){
+    //date
+    public function getDate()
+    {
         return $this->date;
     }
-    public function setDate($date){
-        return $this->date = $date;
+    public function setDate($date)
+    {
+        $this->date = $date;
     }
-//nomcode
-    
-    public function getNomcode(){
+    //nomcode
+
+    public function getNomcode()
+    {
         return $this->nomcode;
     }
-    public function setNomcode($nomcode){
-        return $this->nomcode = $nomcode;
+    public function setNomcode($nomcode)
+    {
+        $this->nomcode = $nomcode;
     }
-//nationalité
-    
-    public function getNationalite(){
+    //nationalité
+
+    public function getNationalite()
+    {
         return $this->nationalite;
     }
-    public function setNationalite($nationalite){
-        return $this->nationalite = $nationalite;
+    public function setNationalite($nationalite)
+    {
+        $this->nationalite = $nationalite;
     }
-
-
 }

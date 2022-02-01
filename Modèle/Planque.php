@@ -1,13 +1,15 @@
 <?php
 
-class Planque{
+class Planque
+{
     private int $code;
     private string $adresse;
     private string $pays;
     private string $type;
 
 
-    public function __construct($code, $adresse, $pays, $type){
+    public function __construct($code, $adresse, $pays, $type)
+    {
         $this->code = $code;
         $this->adresse = $adresse;
         $this->pays = $pays;
@@ -15,35 +17,43 @@ class Planque{
     }
 
     // code d'identification
-    function getCode(){
+    function getCode()
+    {
         return $this->code;
     }
 
-    function setCode($code){
-        return $this->code = $code;
+    function setCode($code)
+    {
+        $this->code = $code;
     }
-// adresse
-    function getAdresse(){
+    // adresse
+    function getAdresse()
+    {
         return $this->adresse;
     }
 
-    function setAdresse($adresse){
-        return $this->adresse = $adresse;
+    function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
     }
-// pays
-    function getPays(){
+    // pays
+    function getPays()
+    {
         return $this->pays;
     }
 
-    function setPays($pays){
-        return $this->pays = $pays;
+    function setPays($pays)
+    {
+        $this->pays = $pays;
     }
-// type
-    function getType(){
+    // type
+    function getType()
+    {
         return $this->type;
     }
 
-    function setType($type){
-        return $this->type = $type;
+    function setType($type)
+    {
+        $this->type = $type;
     }
 }
