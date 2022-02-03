@@ -1,13 +1,17 @@
 <?php
-require_once('Controlleur/Controlleurs.php');
+require_once('Controlleur/AccueilController.php');
+$AccueilControl = new AccueilController;
 
-if ($_GET['action'] == 'accueil') {
-    AccueilControlleur();
-} else if ($_GET['action'] == 'back') {
+if (empty($_GET['action'])) {
+    $AccueilControl->afficherAccueil();
+} else if ($_GET['action'] === 'back') {
 
-    BackControlleur();
-} else if ($_GET['action'] == 'detail') {
-    DetailControlleur();
+    require('Vue/back.php');
+} else if ($_GET['action'] === 'detail') {
+
+    require('Vue/detail.php');
+} else if ($_GET['action'] === 'accueil') {
+    $AccueilControl->afficherAccueil();
 } else {
-    AccueilControlleur();
+    $AccueilControl->afficherAccueil();
 }

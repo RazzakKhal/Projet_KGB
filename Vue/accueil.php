@@ -1,17 +1,10 @@
 <?php
+
+
 $titre = 'Projet KGB';
 ob_start();
-require_once('Modèle/Mission.php');
-require_once('Modèle/ManageMission.php');
 
-$m1 = new Mission(1, 'Tuer Kenny', 'Votre mission consistera à tuer Mr Kenny', 'malware', 'France', [1], [1], [1], 'assasinat', 'en cours', ['assassinat'], 123, 1422, []);
-$m2 = new Mission(1, 'Surveiller Laden', 'Votre mission consistera à Surveiller Ben Laden', 'malware', 'France', [1], [1], [1], 'assasinat', 'en cours', ['assassinat'], 123, 1422, []);
-$m3 = new Mission(1, 'infiltrer maison blanche', 'Votre mission consistera à inflitrer la maison blanche', 'malware', 'France', [1], [1], [1], 'assasinat', 'en cours', ['assassinat'], 123, 1422, []);
-$manager = new ManageMission();
-$manager->setMission($m1);
-$manager->setMission($m2);
-$manager->setMission($m3);
-$mission = $manager->getMission();
+
 ?>
 <!-- code html qui ira dans la variable $corps -->
 <div class="container-fluid violet">
@@ -58,7 +51,8 @@ $mission = $manager->getMission();
                     </td>
                     <td>
                         <button class="btn btn-info">
-                            Details
+
+                            <a href="detail">Details</a>
 
                         </button>
                     </td>

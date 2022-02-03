@@ -1,9 +1,20 @@
 <?php
 
-class AccesBdd
+abstract class AccesBdd
 {
-    public function connexion()
+    private static $pdo;
+
+    private static function setBdd()
     {
-        $pdo = new PDO('mysql:dbname=kgb;host=localhost', 'root', '');
+        self::$pdo = new PDO("mysql:host=localhost;dbname=kgb", "root", "");
+        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    }
+
+    protected function getBdd()
+    {
+        if (self::$pdo === null) {
+            self::setBdd();
+        }
+        return self::$pdo;
     }
 }
