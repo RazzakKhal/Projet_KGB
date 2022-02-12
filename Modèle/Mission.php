@@ -2,33 +2,33 @@
 
 class Mission
 {
-    private int $id;
+    private ?int $id;
     private ?string $titre;
     private ?string $description;
     private ?string $nomcode;
     private ?string $pays;
     public  $agent = [];
-    private  $contact;
-    private  $cible;
+    private  $contact = [];
+    private  $cible = [];
     private ?string $type;
     private ?string $statut;
     private ?string $specialite;
     private ?int $datedebut;
     private ?int $datefin;
-    private  $planque;
+    private  $planque = [];
 
-    public function __construct(?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, ?int $datedebut, ?int $datefin)
+    public function __construct(?int $id, ?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, ?int $datedebut, ?int $datefin)
     {
 
 
-
+        $this->id = $id;
         $this->titre = $titre;
         $this->description = $description;
         $this->nomcode = $nomcode;
         $this->pays = $pays;
         $this->type = $type;
         $this->statut = $statut;
-        $this->specialites = $specialite;
+        $this->specialite = $specialite;
         $this->datedebut = $datedebut;
         $this->datefin = $datefin;
     }

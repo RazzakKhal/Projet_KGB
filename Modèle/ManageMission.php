@@ -5,6 +5,7 @@ class ManageMission extends AccesBdd
 {
     private $mission;
 
+
     public function getMission()
     {
         return $this->mission;
@@ -14,7 +15,20 @@ class ManageMission extends AccesBdd
     {
         $this->mission[] = $mission;
     }
-    // fonction qui récupère les caractéristiques d'une mission en bdd pour l'instancier
+
+
+
+
+
+
+
+
+
+
+    // fonction qui récupère les caractéristiques de toutes les missions en bdd pour les instancier
+
+
+
     public function chargementMissionAccueil()
     {
         $pdo = $this->getBdd();
@@ -26,7 +40,7 @@ class ManageMission extends AccesBdd
         // pour chaque mission creer une instance mission et attribuer les valeurs
         foreach ($mesmissions as $missions) {
 
-            $m =  new Mission($missions['titre_m'], $missions['description_m'], $missions['nomcode_m'], $missions['pays_m'], $missions['type_m'], $missions['statut_m'], $missions['specialite_m'], $missions['datedebut_m'], $missions['datefin_m']);
+            $m =  new Mission($missions['id'], $missions['titre_m'], $missions['description_m'], $missions['nomcode_m'], $missions['pays_m'], $missions['type_m'], $missions['statut_m'], $missions['specialite_m'], $missions['datedebut_m'], $missions['datefin_m']);
             $this->setMission($m);
 
 
@@ -39,16 +53,47 @@ class ManageMission extends AccesBdd
                 $m->setAgent($agent);
             }
 
-            //récupérer contact, cible, plaque
+            //récupérer contact
+
+            $req3 = $pdo->prepare('SELECT nomcode_contact FROM Contact WHERE mission_contact=:id');
+            $req3->bindValue(':id', $missions['id']);
+            $req3->execute();
+            $mescontacts = $req3->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($mescontacts as $contact) {
+                $m->setContact($contact);
+            }
+
+
+
+            //récupérer cible
+
+            $req4 = $pdo->prepare('SELECT nomcode_cible FROM Cible WHERE mission_cible=:id');
+            $req4->bindValue(':id', $missions['id']);
+            $req4->execute();
+            $mescibles = $req4->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($mescibles as $cible) {
+                $m->setCible($cible);
+            }
+
+            //récupérer planque
+
+            $req5 = $pdo->prepare('SELECT code_planque FROM Planque WHERE mission_planque=:id');
+            $req5->bindValue(':id', $missions['id']);
+            $req5->execute();
+            $mesplanques = $req5->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($mesplanques as $planque) {
+                $m->setPlanque($planque);
+            }
         }
     }
-    public function AffichageAgent()
+
+
+    // récupération d'une mission par son id
+    public function recupMissionid($id)
     {
-        $mission = $this->mission;
-        for ($i = 0; $i < count($mission); $i++) {
-            //code a mettre dans l'endroit ou insérer les agents
-            for ($m = 0; $m < count($mission[$i]->getAgent()); $m++) {
-                echo ($mission[$i]->getAgent()[$m]['code_agent'] . "  ");
+        for ($i = 0; $i < count($this->mission); $i++) {
+            if ($this->mission[$i]->getId() === $id) {
+                return $this->mission[$i];
             }
         }
     }

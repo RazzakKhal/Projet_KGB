@@ -90,9 +90,9 @@ INSERT INTO AGENT(nom, prenom, date, nationalite, mission) VALUES ('Delau', 'Vic
 INSERT INTO CONTACT(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Boulet', 'George', 310347463,'le cinglé', 'Française', 2);
 INSERT INTO CONTACT(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Palerme', 'Tanguy', 1643759142,'le peureux', 'Française', 1);
 INSERT INTO CONTACT(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Pipeau', 'François', 806625463,'le truand', 'Française', 3);
-INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Southpark', 'Kenny', 310347463,'immortel', 'Americaine', 2);
-INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Laden', 'Ben', -404353337,'le terroriste', 'Afghane', 1);
-INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission) VALUES ('Maison', 'Blanche', 1643759187,'la belle', 'Americaine', 3);
+INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission_cible) VALUES ('Southpark', 'Kenny', 310347463,'immortel', 'Americaine', 1);
+INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission_cible) VALUES ('Laden', 'Ben', -404353337,'le terroriste', 'Afghane', 2);
+INSERT INTO CIBLE(nom, prenom, date, nomcode, nationalite, mission_cible) VALUES ('Maison', 'Blanche', 1643759187,'la belle', 'Americaine', 3);
 INSERT INTO PLANQUE(adresse, pays, type, mission) VALUES ('14 chemin dici', 'France', 'Cabane', 1);
 INSERT INTO PLANQUE(adresse, pays, type, mission) VALUES ('11 chemin dici', 'France', 'Maison', 2);
 INSERT INTO PLANQUE(adresse, pays, type, mission) VALUES ('9 chemin dici', 'Etats-unis', 'Maison', 3);
