@@ -1,7 +1,7 @@
 <?php
 
 
-$titre = 'Projet KGB';
+
 ob_start();
 
 
@@ -70,5 +70,9 @@ ob_start();
     </table>
 </div>
 
-<?php $corps = ob_get_clean(); ?>
-<?php require('base.php'); ?>
+<?php
+$corps = ob_get_clean();
+$titre = 'Projet KGB';
+require('base.php');
+
+?>

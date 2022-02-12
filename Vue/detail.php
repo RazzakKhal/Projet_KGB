@@ -1,6 +1,5 @@
 <?php
 
-$titre = 'Projet KGB';
 ob_start();
 
 ?>
@@ -8,14 +7,14 @@ ob_start();
 <!-- Corps html de la page detail -->
 <div class="container-fluid violet">
     <div class="row">
-        <div class="col-md-11">
+        <div class="col-md-10">
             <h1 class="text-center">Bienvenue sur le site du KGB</h1>
         </div>
-        <div class="col-md-1"><a href="<?= URL ?>connexion"><button type="button" class="btn btn-outline-secondary">Se connecter</button></a></div>
-
+        <div class="col-md-1"><a href="<?= URL ?>connexion"><button type="button" class="btn btn-outline-secondary">Connexion</button></a></div>
+        <div class="col-md-1"><a href="<?= URL ?>accueil"><button type="button" class="btn btn-outline-secondary">Accueil</button></a></div>
     </div>
     <div class="row">
-        <h4 class="text-center">
+        <h4 class="text-center col-md-10">
             Vous pouvez consulter les details de votre mission ci-dessous.
         </h4>
     </div>
@@ -125,5 +124,8 @@ ob_start();
     </table>
 </div>
 
-<?php $corps = ob_get_clean(); ?>
-<?php require('base.php'); ?>
+<?php
+$corps = ob_get_clean();
+$titre = 'Projet KGB';
+require('base.php');
+?>
