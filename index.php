@@ -17,14 +17,30 @@ if (empty($_GET['action'])) {
     $AccueilControl->afficherAccueil();
 } else {
     $url = explode("/", filter_var($_GET['action'], FILTER_SANITIZE_URL));
+    // si mon premier mot dans mon url est back, detail, connexion ou autre
     switch ($url[0]) {
         case 'back':
-            $BackControl->afficherBack();
+            if (empty($url[1])) {
+                $BackControl->afficherBack();
+            } else if ($url[1] === "missions") {
+                $BackControl->afficherMissions();
+            } else if ($url[1] === "contacts") {
+                $BackControl->afficherContacts();
+            } else if ($url[1] === "agents") {
+                $BackControl->afficherAgents();
+            } else if ($url[1] === "cibles") {
+                $BackControl->afficherCibles();
+            } else if ($url[1] === "planques") {
+                $BackControl->afficherPlanques();
+            } else {
+                throw new Exception("la page n'existe pas");
+            }
             break;
 
         case 'detail':
 
-            $url = (int)$url[1];
+            $url = (int)$url[1]; // fonction ci dessous fonctionne uniquement avec un int donc je converti 
+            //car correspond à un id de mission
             $AccueilControl->afficherMissionDetail($url);
             break;
 

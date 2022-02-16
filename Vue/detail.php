@@ -57,7 +57,9 @@ ob_start();
                 <?= $mission->getPays(); ?>
             </td>
             <td>
-                <?php for ($m = 0; $m < count($mission->getAgent()); $m++) {
+
+                <?php // Pour chaque chaque agent je récupere le code agent ($mission->getAgent renvoi un tableau d'agent)
+                for ($m = 0; $m < count($mission->getAgent()); $m++) {
                     echo ($mission->getAgent()[$m]['code_agent'] . " / ");
                 } ?>
             </td>
@@ -114,10 +116,11 @@ ob_start();
                 <?= $mission->getSpecialite(); ?>
             </td>
             <td>
-                <?= $mission->getDatedebut(); ?>
+                <?= date('d M Y', $mission->getDatedebut()); ?>
             </td>
             <td>
-                <?= $mission->getDatefin(); ?>
+                <?= date('d M Y', $mission->getDatefin()); // à modifier car affiche date actuelle 
+                ?>
             </td>
 
         </tbody>
