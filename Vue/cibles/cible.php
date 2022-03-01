@@ -49,38 +49,46 @@ ob_start();
         <th>
 
         </th>
+
     </thead>
     <!-- boucle pour le tableau -->
-    <tbody>
-        <tr>
-            <td>
+    <?php
+    for ($i = 0; $i < count($mescibles); $i++) :
 
-            </td>
-            <td>
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?= $mescibles[$i]->getNom(); ?>
+                </td>
+                <td>
+                    <?= $mescibles[$i]->getPrenom(); ?>
+                </td>
+                <td>
+                    <?= date('d M Y', $mescibles[$i]->getDate()); ?>
+                </td>
+                <td>
+                    <?= $mescibles[$i]->getNomcode(); ?>
+                </td>
+                <td>
+                    <?= $mescibles[$i]->getNationalite(); ?>
+                </td>
+                <td>
+                    <?= $mescibles[$i]->getMission(); ?>
+                </td>
+                <td>
+                    <button class="btn btn-warning">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">Supprimer</button>
+                </td>
 
-            </td>
-            <td>
+            </tr>
+        </tbody>
+    <?php
+    endfor;
 
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-
-            <td>
-                <button class="btn btn-warning">Modifier</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Supprimer</button>
-            </td>
-
-        </tr>
-    </tbody>
+    ?>
 </table>
 
 <?php

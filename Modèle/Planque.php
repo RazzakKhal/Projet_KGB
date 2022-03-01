@@ -6,6 +6,7 @@ class Planque
     private string $adresse;
     private string $pays;
     private string $type;
+    private $mission;
 
 
     public function __construct($code, $adresse, $pays, $type)
@@ -55,5 +56,14 @@ class Planque
     function setType($type)
     {
         $this->type = $type;
+    }
+
+    public function getMission()
+    {
+        return $this->mission;
+    }
+    public function setMission($mission)
+    {
+        $this->mission = $mission;
     }
 }

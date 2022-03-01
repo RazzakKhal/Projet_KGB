@@ -9,9 +9,10 @@ class Cible
     private int $date;
     private string $nomcode;
     private string $nationalite;
+    private $mission;
 
 
-    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite, string $specialites)
+    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -78,5 +79,14 @@ class Cible
     public function setNationalite($nationalite)
     {
         $this->nationalite = $nationalite;
+    }
+
+    public function getMission()
+    {
+        return $this->mission;
+    }
+    public function setMission($mission)
+    {
+        $this->mission = $mission;
     }
 }

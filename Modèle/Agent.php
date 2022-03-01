@@ -8,16 +8,16 @@ class Agent
     private int $date;
     private int $code;
     private string $nationalite;
-    private string $specialites;
+    private $specialites;
+    private $mission;
 
-    public function __construct(string $nom, string $prenom, int $date, int $code, string $nationalite, string $specialites)
+    public function __construct(string $nom, string $prenom, int $date, int $code, string $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->date = $date;
         $this->code = $code;
         $this->nationalite = $nationalite;
-        $this->specialites = $specialites;
     }
     //nom
     public function getNom()
@@ -76,6 +76,15 @@ class Agent
     }
     public function setSpecialites($specialites)
     {
-        $this->specialites = $specialites;
+        $this->specialites[] = $specialites;
+    }
+
+    public function getMission()
+    {
+        return $this->mission;
+    }
+    public function setMission($mission)
+    {
+        $this->mission = $mission;
     }
 }

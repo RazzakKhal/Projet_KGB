@@ -50,38 +50,46 @@ ob_start();
         <th>
 
         </th>
+
     </thead>
     <!-- boucle pour le tableau -->
-    <tbody>
-        <tr>
-            <td>
+    <?php
+    for ($i = 0; $i < count($mescontacts); $i++) :
 
-            </td>
-            <td>
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?= $mescontacts[$i]->getNom(); ?>
+                </td>
+                <td>
+                    <?= $mescontacts[$i]->getPrenom(); ?>
+                </td>
+                <td>
+                    <?= date('d M Y', $mescontacts[$i]->getDate()); ?>
+                </td>
+                <td>
+                    <?= $mescontacts[$i]->getNomcode(); ?>
+                </td>
+                <td>
+                    <?= $mescontacts[$i]->getNationalite(); ?>
+                </td>
+                <td>
+                    <?= $mescontacts[$i]->getMission(); ?>
+                </td>
+                <td>
+                    <button class="btn btn-warning">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">Supprimer</button>
+                </td>
 
-            </td>
-            <td>
+            </tr>
+        </tbody>
+    <?php
+    endfor;
 
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-
-            <td>
-                <button class="btn btn-warning">Modifier</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Supprimer</button>
-            </td>
-
-        </tr>
-    </tbody>
+    ?>
 </table>
 
 <?php

@@ -54,39 +54,52 @@ ob_start();
         </th>
     </thead>
     <!-- boucle pour le tableau -->
-    <tbody>
-        <tr>
-            <td>
+    <?php
+    for ($i = 0; $i < count($mesagents); $i++) :
 
-            </td>
-            <td>
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?= $mesagents[$i]->getCode(); ?>
+                </td>
+                <td>
+                    <?= $mesagents[$i]->getNom(); ?>
+                </td>
+                <td>
+                    <?= $mesagents[$i]->getPrenom(); ?>
+                </td>
+                <td>
+                    <?= date('d M Y', $mesagents[$i]->getDate()); ?>
+                </td>
+                <td>
+                    <?= $mesagents[$i]->getNationalite(); ?>
+                </td>
+                <td>
+                    <?= $mesagents[$i]->getMission(); ?>
+                </td>
+                <td>
+                    <?php foreach ($mesagents[$i]->getSpecialites() as $agents) {
+                        foreach ($agents as $agent) {
+                            echo $agent . ' / ';
+                        }
+                    }
+                    ?>
+                </td>
 
-            </td>
-            <td>
+                <td>
+                    <button class="btn btn-warning">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">Supprimer</button>
+                </td>
 
-            </td>
-            <td>
+            </tr>
+        </tbody>
+    <?php
+    endfor;
 
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-
-            <td>
-                <button class="btn btn-warning">Modifier</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Supprimer</button>
-            </td>
-
-        </tr>
-    </tbody>
+    ?>
 </table>
 
 <?php

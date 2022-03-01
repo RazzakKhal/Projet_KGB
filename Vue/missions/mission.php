@@ -40,7 +40,7 @@ ob_start();
             Type
         </th>
         <th>
-            Staut
+            Statut
         </th>
         <th>
             Spécialité requise
@@ -60,45 +60,52 @@ ob_start();
         </th>
     </thead>
     <!-- boucle pour le tableau -->
-    <tbody>
-        <tr>
-            <td>
+    <?php
+    for ($i = 0; $i < count($mesmissions); $i++) :
 
-            </td>
-            <td>
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?= $mesmissions[$i]->getTitre(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getDescription(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getNomcode(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getPays(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getType(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getStatut(); ?>
+                </td>
+                <td>
+                    <?= $mesmissions[$i]->getSpecialite(); ?>
+                </td>
+                <td>
+                    <?= date('d M Y', $mesmissions[$i]->getDatedebut()); ?>
+                </td>
+                <td>
+                    <?= date('d M Y', $mesmissions[$i]->getDatefin()); // s'affiche meme si null 
+                    ?>
+                </td>
 
-            </td>
-            <td>
+                <td>
+                    <button class="btn btn-warning">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">Supprimer</button>
+                </td>
 
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-
-            <td>
-                <button class="btn btn-warning">Modifier</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Supprimer</button>
-            </td>
-
-        </tr>
-    </tbody>
+            </tr>
+        </tbody>
+    <?php endfor;
+    ?>
 </table>
 
 <?php

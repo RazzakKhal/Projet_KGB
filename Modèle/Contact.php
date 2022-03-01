@@ -7,11 +7,11 @@ class Contact
     private string $nom;
     private string $prenom;
     private int $date;
-    private int $nomcode;
+    private string $nomcode;
     private string $nationalite;
+    private string $mission;
 
-
-    public function __construct(string $nom, string $prenom, int $date, int $nomcode, string $nationalite, string $specialites)
+    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -77,5 +77,13 @@ class Contact
     public function setNationalite($nationalite)
     {
         $this->nationalite = $nationalite;
+    }
+    public function getMission()
+    {
+        return $this->mission;
+    }
+    public function setMission($mission)
+    {
+        $this->mission = $mission;
     }
 }

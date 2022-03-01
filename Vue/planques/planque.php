@@ -48,33 +48,41 @@ ob_start();
         </th>
     </thead>
     <!-- boucle pour le tableau -->
-    <tbody>
-        <tr>
-            <td>
+    <?php
+    for ($i = 0; $i < count($mesplanques); $i++) :
 
-            </td>
-            <td>
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?= $mesplanques[$i]->getCode(); ?>
+                </td>
+                <td>
+                    <?= $mesplanques[$i]->getAdresse(); ?>
+                </td>
+                <td>
+                    <?= $mesplanques[$i]->getPays(); ?>
+                </td>
+                <td>
+                    <?= $mesplanques[$i]->getType(); ?>
+                </td>
+                <td>
+                    <?= $mesplanques[$i]->getMission(); ?>
+                </td>
 
-            </td>
-            <td>
+                <td>
+                    <button class="btn btn-warning">Modifier</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">Supprimer</button>
+                </td>
 
-            </td>
-            <td>
+            </tr>
+        </tbody>
+    <?php
+    endfor;
 
-            </td>
-            <td>
-
-            </td>
-
-            <td>
-                <button class="btn btn-warning">Modifier</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Supprimer</button>
-            </td>
-
-        </tr>
-    </tbody>
+    ?>
 </table>
 
 
