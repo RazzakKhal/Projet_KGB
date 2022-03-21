@@ -9,9 +9,9 @@ class Planque
     private $mission;
 
 
-    public function __construct($code, $adresse, $pays, $type)
+    public function __construct($adresse, $pays, $type)
     {
-        $this->code = $code;
+
         $this->adresse = $adresse;
         $this->pays = $pays;
         $this->type = $type;

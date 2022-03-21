@@ -24,12 +24,12 @@ ob_start();
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form method="POST" action="Modèle/traitement.php" class="form-inline text-center">
+            <form method="post" action="<?= URL ?>connexion/traitement" class="form-inline text-center">
 
                 <legend class="border-bottom mt-2">Formulaire de connexion</legend>
 
-                <label for="mail">Identifiant</label>
-                <input type="mail" id="mail" name="mail">
+                <label for="name">Identifiant</label>
+                <input type="text" id="name" name="name">
                 <label for="pass">Mot de passe</label>
                 <input type="password" id="pass" name="pass">
                 <button type="submit" class="btn btn-info">Se connecter</button>

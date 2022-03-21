@@ -17,4 +17,14 @@ class ConnexionController
 
         require_once('Vue/connexion.php');
     }
+
+    public function traitementFormulaire()
+    {
+        $this->ConnexionManager->nowConnected($_POST['name'], $_POST['pass']);
+    }
+
+    public function deconnexion()
+    {
+        $this->ConnexionManager->seDeconnecter();
+    }
 }

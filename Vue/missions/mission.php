@@ -12,7 +12,7 @@ ob_start();
         <div class="col-md-11">
             <h1 class="text-center">Bienvenue sur le site du KGB</h1>
         </div>
-        <div class="col-md-1"><a href="<?= URL ?>connexion"><button type="button" class="btn btn-outline-secondary">Se connecter</button></a></div>
+        <div class="col-md-1"><a href="<?= URL ?>connexion/deconnexion"><button type="button" class="btn btn-outline-secondary">Se Deconnecter</button></a></div>
 
     </div>
     <div class="row w-100">
@@ -91,15 +91,18 @@ ob_start();
                     <?= date('d M Y', $mesmissions[$i]->getDatedebut()); ?>
                 </td>
                 <td>
-                    <?= date('d M Y', $mesmissions[$i]->getDatefin()); // s'affiche meme si null 
+                    <?= date('d M Y', $mesmissions[$i]->getDatefin());
+                    // s'affiche meme si null 
                     ?>
                 </td>
 
                 <td>
-                    <button class="btn btn-warning">Modifier</button>
+                    <a href="<?= URL ?>back/modmission/<?= $mesmissions[$i]->getId(); ?>"><button class="btn btn-warning">Modifier</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-danger">Supprimer</button>
+                    <form method="post" action="<?= URL ?>back/supmission/<?= $mesmissions[$i]->getId(); ?>" onsubmit="return confirm('voulez vous vraiment supprimer cet item ?');">
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                    </form>
                 </td>
 
             </tr>

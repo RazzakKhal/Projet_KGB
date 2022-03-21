@@ -40,7 +40,8 @@ class ManageMission extends AccesBdd
         // pour chaque mission creer une instance mission et attribuer les valeurs
         foreach ($mesmissions as $missions) {
 
-            $m =  new Mission($missions['id'], $missions['titre_m'], $missions['description_m'], $missions['nomcode_m'], $missions['pays_m'], $missions['type_m'], $missions['statut_m'], $missions['specialite_m'], $missions['datedebut_m'], $missions['datefin_m']);
+            $m =  new Mission($missions['titre_m'], $missions['description_m'], $missions['nomcode_m'], $missions['pays_m'], $missions['type_m'], $missions['statut_m'], $missions['specialite_m'], $missions['datedebut_m'], $missions['datefin_m']);
+            $m->setId($missions['id']);
             $this->setMission($m);
 
 

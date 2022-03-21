@@ -17,11 +17,11 @@ class Mission
     private ?int $datefin;
     private  $planque = [];
 
-    public function __construct(?int $id, ?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, ?int $datedebut, ?int $datefin)
+    public function __construct(?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, ?int $datedebut, ?int $datefin)
     {
 
 
-        $this->id = $id;
+
         $this->titre = $titre;
         $this->description = $description;
         $this->nomcode = $nomcode;
@@ -37,6 +37,11 @@ class Mission
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
 

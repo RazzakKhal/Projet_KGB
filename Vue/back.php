@@ -11,7 +11,7 @@ ob_start();
         <div class="col-md-11">
             <h1 class="text-center">Bienvenue sur le site du KGB cher Admin</h1>
         </div>
-        <div class="col-md-1"><button type="button" class="btn btn-outline-secondary">Se deconnecter</button></div>
+        <div class="col-md-1"><a href="<?= URL ?>connexion/deconnexion"><button type="button" class="btn btn-outline-secondary">Se Deconnecter</button></a></div>
 
     </div>
     <div class="row">
@@ -42,10 +42,10 @@ ob_start();
                     Missions
                 </td>
                 <td>
-                    <a href="<?= URL ?>/back/missions"><button class="btn btn-info">Voir</button></a>
+                    <a href="<?= URL ?>back/missions"><button class="btn btn-info">Voir</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-success">Ajouter</button>
+                    <a href="<?= URL ?>back/missionsa"><button class="btn btn-success">Ajouter</button></a>
                 </td>
 
             </tr>
@@ -57,7 +57,7 @@ ob_start();
                     <a href="<?= URL ?>back/agents"><button class="btn btn-info">Voir</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-success">Ajouter</button>
+                    <a href="<?= URL ?>back/agentsa"><button class="btn btn-success">Ajouter</button></a>
                 </td>
 
             </tr>
@@ -69,7 +69,7 @@ ob_start();
                     <a href="<?= URL ?>back/cibles"><button class="btn btn-info">Voir</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-success">Ajouter</button>
+                    <a href="<?= URL ?>back/ciblesa"><button class="btn btn-success">Ajouter</button></a>
                 </td>
 
             </tr>
@@ -81,7 +81,7 @@ ob_start();
                     <a href="<?= URL ?>back/planques"><button class="btn btn-info">Voir</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-success">Ajouter</button>
+                    <a href="<?= URL ?>back/planquesa"><button class="btn btn-success">Ajouter</button></a>
                 </td>
 
                 </td>
@@ -94,7 +94,7 @@ ob_start();
                     <a href="<?= URL ?>back/contacts"><button class="btn btn-info">Voir</button></a>
                 </td>
                 <td>
-                    <button class="btn btn-success">Ajouter</button>
+                    <a href="<?= URL ?>back/contactsa"><button class="btn btn-success">Ajouter</button></a>
                 </td>
 
             </tr>
