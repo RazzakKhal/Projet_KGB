@@ -5,13 +5,13 @@ class Agent
 {
     private string $nom;
     private string $prenom;
-    private int $date;
+    private $date;
     private int $code;
     private string $nationalite;
     private $specialites;
     private $mission;
 
-    public function __construct(string $nom, string $prenom, int $date, int $code, string $nationalite)
+    public function __construct(string $nom, string $prenom, $date, int $code, string $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;

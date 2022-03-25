@@ -27,18 +27,45 @@ ob_start();
     <input type="text" name="description" class="form-control" value="<?= $mission->getDescription() ?>"><br>
     <label for="nomcode" class="form-label fs-4 fw-light">Nom de code de la mission</label>
     <input type="text" name="nomcode" class="form-control" value="<?= $mission->getNomcode() ?>"><br>
-    <label for="pays" class="form-label fs-4 fw-light">Pays de la mission</label>
-    <input type="text" name="pays" class="form-control" value="<?= $mission->getPays() ?>"><br>
-    <label for="type" class="form-label fs-4 fw-light">Type de mission</label>
-    <input type="text" name="type" class="form-control" value="<?= $mission->getType() ?>"><br>
+    <fieldset>
+        <legend>Pays de la Mission</legend>
+        <label for="France">France</label>
+        <input type="radio" id="France" name="pays" value="France">
+        <label for="USA">USA</label>
+        <input type="radio" id="USA" name="pays" value="USA">
+        <label for="Afghanisthan">Afghanisthan</label>
+        <input type="radio" id="Afghanisthan" name="pays" value="Afghanisthan">
+        <label for="Espagne">Espagne</label>
+        <input type="radio" id="Espagne" name="pays" value="Espagne">
+        <label for="Angleterre">Angleterre</label>
+        <input type="radio" id="Angleterre" name="pays" value="Angleterre">
+        <label for="Turquie">Turquie</label>
+        <input type="radio" id="Turquie" name="pays" value="Turquie">
+    </fieldset> <br>
+    <fieldset>
+        <legend>Type de la Mission</legend>
+        <label for="Assassinat">Assassinat</label>
+        <input type="radio" id="Assassinat" name="type" value="Assassinat">
+        <label for="Surveillance">Surveillance</label>
+        <input type="radio" id="Surveillance" name="type" value="Surveillance">
+        <label for="Infiltration">Infiltration</label>
+        <input type="radio" id="Infiltration" name="type" value="Infiltration">
+    </fieldset> <br>
     <label for="statut" class="form-label fs-4 fw-light">Statut de la mission</label>
     <input type="text" name="statut" class="form-control" value="<?= $mission->getStatut() ?>"><br>
     <label for="datedebut" class="form-label fs-4 fw-light">Date de début</label>
-    <input type="text" name="datedebut" class="form-control" value="<?= $mission->getDatedebut() ?>"><br>
+    <input type="date" name="datedebut" class="form-control"><br>
     <label for="datefin" class="form-label fs-4 fw-light">Date de fin</label>
-    <input type="text" name="datefin" class="form-control" value="<?= $mission->getDatefin() ?>"><br>
-    <label for="specialite" class="form-label fs-4 fw-light">Specialité requise</label>
-    <input type="text" name="specialite" class="form-control" value="<?= $mission->getSpecialite() ?>"><br>
+    <input type="date" name="datefin" class="form-control"><br>
+    <fieldset>
+        <legend>Spécialité Requise</legend>
+        <label for="Assassinat">Assassinat</label>
+        <input type="radio" id="Assassinat" name="specialite" value="Assassinat">
+        <label for="Surveillance">Surveillance</label>
+        <input type="radio" id="Surveillance" name="specialite" value="Surveillance">
+        <label for="Infiltration">Infiltration</label>
+        <input type="radio" id="Infiltration" name="specialite" value="Infiltration">
+    </fieldset> <br>
     <button type="submit" class="btn btn-info">Soumettre</button>
 </form>
 

@@ -14,7 +14,7 @@ class ConnexionController
 
     public function afficherConnexion()
     {
-
+        $this->ConnexionManager->isConnected();
         require_once('Vue/connexion.php');
     }
 

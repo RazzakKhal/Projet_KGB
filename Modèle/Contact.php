@@ -6,12 +6,12 @@ class Contact
     private int $id;
     private string $nom;
     private string $prenom;
-    private int $date;
+    private $date;
     private string $nomcode;
     private string $nationalite;
     private string $mission;
 
-    public function __construct(string $nom, string $prenom, int $date, string $nomcode, string $nationalite)
+    public function __construct(string $nom, string $prenom,  $date, string $nomcode, string $nationalite)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;

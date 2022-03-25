@@ -9,10 +9,10 @@ ob_start();
 <!-- code html qui ira dans la variable $corps -->
 <div class="container-fluid violet">
     <div class="row w-100">
-        <div class="col-md-11">
+        <div class="col-md-10">
             <h1 class="text-center">Bienvenue sur le site du KGB</h1>
         </div>
-        <div class="col-md-1"><a href="<?= URL ?>connexion"><button type="button" class="btn btn-outline-secondary">Se connecter</button></a></div>
+        <div class="col-md-2"><a href="<?= URL ?>connexion"><button type="button" class="btn btn-outline-secondary">Connexion/ Back-Office</button></a></div>
 
     </div>
     <div class="row w-100">
@@ -26,6 +26,9 @@ ob_start();
     <table class="table">
         <thead>
             <tr>
+                <th>
+                    Identifiant de la Mission
+                </th>
                 <th>
                     Mission
                 </th>
@@ -44,6 +47,9 @@ ob_start();
 
         ?><tbody>
                 <tr>
+                    <td>
+                        <?= $mission[$i]->getId(); ?>
+                    </td>
                     <td>
                         <?= $mission[$i]->getTitre(); ?>
                     </td>

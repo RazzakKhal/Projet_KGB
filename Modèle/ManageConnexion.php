@@ -26,4 +26,11 @@ class ManageConnexion extends AccesBdd
         unset($_SESSION['username']);
         header('Location: ' . URL . 'connexion');
     }
+
+    public function isConnected()
+    {
+        if (isset($_SESSION['username'])) {
+            header('Location: ' . URL . 'back');
+        }
+    }
 }

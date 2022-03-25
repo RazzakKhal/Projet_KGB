@@ -36,7 +36,7 @@ ob_start();
                 Pays
             </th>
             <th>
-                Codes Agents
+                Agents
             </th>
             <th>
                 Contacts
@@ -60,12 +60,12 @@ ob_start();
 
                 <?php // Pour chaque chaque agent je récupere le code agent ($mission->getAgent renvoi un tableau d'agent)
                 for ($m = 0; $m < count($mission->getAgent()); $m++) {
-                    echo ($mission->getAgent()[$m]['code_agent'] . " / ");
+                    echo ("id : " . $mission->getAgent()[$m]['code_agent'] . " -> " . $mission->getAgent()[$m]['nom'] . " / ");
                 } ?>
             </td>
             <td>
                 <?php for ($m = 0; $m < count($mission->getContact()); $m++) {
-                    echo ($mission->getContact()[$m]['nomcode_contact'] . " / ");
+                    echo ("id : " . $mission->getContact()[$m]['id'] . " -> " . $mission->getContact()[$m]['nomcode_contact'] . " / ");
                 } ?>
             </td>
 
@@ -98,12 +98,12 @@ ob_start();
         <tbody>
             <td>
                 <?php for ($m = 0; $m < count($mission->getPlanque()); $m++) {
-                    echo ($mission->getPlanque()[$m]['code_planque'] . " / ");
+                    echo ("id : " . $mission->getPlanque()[$m]['code_planque'] . " -> " . $mission->getPlanque()[$m]['adresse'] . " / ");
                 } ?>
             </td>
             <td>
                 <?php for ($m = 0; $m < count($mission->getCible()); $m++) {
-                    echo ($mission->getCible()[$m]['nomcode_cible'] . " / ");
+                    echo ("id : " . $mission->getCible()[$m]['id'] . " -> " . $mission->getCible()[$m]['nomcode_cible'] . " / ");
                 } ?>
             </td>
             <td>
@@ -116,10 +116,10 @@ ob_start();
                 <?= $mission->getSpecialite(); ?>
             </td>
             <td>
-                <?= date('d M Y', $mission->getDatedebut()); ?>
+                <?= $mission->getDatedebut(); ?>
             </td>
             <td>
-                <?= date('d M Y', $mission->getDatefin()); // à modifier car affiche date actuelle 
+                <?= $mission->getDatefin(); // à modifier car affiche date actuelle 
                 ?>
             </td>
 

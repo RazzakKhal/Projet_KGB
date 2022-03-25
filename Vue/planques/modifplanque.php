@@ -24,12 +24,34 @@ ob_start();
 <form method="post" action="<?= URL ?>back/modplanquev/<?= $planque->getCode() ?> ">
     <label for="adresse" class="form-label fs-4 fw-light">Adresse de la planque</label>
     <input type="text" name="adresse" class="form-control" value="<?= $planque->getAdresse() ?>"><br>
-    <label for="pays" class="form-label fs-4 fw-light">Pays de la planque</label> <!-- pays planque = pays mission -->
-    <input type="text" name="pays" class="form-control" value="<?= $planque->getPays() ?>"><br>
-    <label for="type" class="form-label fs-4 fw-light">Type de planque</label>
-    <input type="text" name="type" class="form-control" value="<?= $planque->getType() ?>"><br>
+    <fieldset>
+        <legend>Pays de la Planque</legend>
+        <label for="France">France</label>
+        <input type="radio" id="France" name="pays" value="France">
+        <label for="USA">USA</label>
+        <input type="radio" id="USA" name="pays" value="USA">
+        <label for="Afghanisthan">Afghanisthan</label>
+        <input type="radio" id="Afghanisthan" name="pays" value="Afghanisthan">
+        <label for="Espagne">Espagne</label>
+        <input type="radio" id="Espagne" name="pays" value="Espagne">
+        <label for="Angleterre">Angleterre</label>
+        <input type="radio" id="Angleterre" name="pays" value="Angleterre">
+        <label for="Turquie">Turquie</label>
+        <input type="radio" id="Turquie" name="pays" value="Turquie">
+    </fieldset>
+    <div class="form-text">Le pays de la planque doit être identique au pays de la mission choisie</div><br>
+    <fieldset>
+        <legend>Type de la Planque</legend>
+        <label for="Maison">Maison</label>
+        <input type="radio" id="Maison" name="type" value="Maison">
+        <label for="Cabane">Cabane</label>
+        <input type="radio" id="Cabane" name="type" value="Cabane">
+        <label for="Eglise">Eglise</label>
+        <input type="radio" id="Eglise" name="type" value="Eglise">
+    </fieldset> <br>
     <label for="mission" class="form-label fs-4 fw-light">Numéro de la mission concernée</label> <!-- numéro doit exister -->
-    <input type="number" name="mission" class="form-control" value="<?= $planque->getMission() ?>"><br>
+    <input type="number" name="mission" class="form-control" value="<?= $planque->getMission() ?>">
+    <div class="form-text">Il s'agit de l'identifiant de la mission trouvable dans l'accueil</div><br>
     <button type="submit" class="btn btn-info">Soumettre</button>
 </form>
 

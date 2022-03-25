@@ -26,13 +26,28 @@ ob_start();
     <label for="prenom" class="form-label fs-4 fw-light">Prénom de la cible</label>
     <input type="text" name="prenom" class="form-control" value="<?= $cible->getPrenom() ?>"><br>
     <label for="date" class="form-label fs-4 fw-light">Date de naissance de la cible</label>
-    <input type="text" name="date" class="form-control" value="<?= $cible->getDate() ?>"><br>
+    <input type="date" name="date" class="form-control"><br>
     <label for="nomcode" class="form-label fs-4 fw-light">Nom de code de la cible</label>
     <input type="text" name="nomcode" class="form-control" value="<?= $cible->getNomcode() ?>"><br>
-    <label for="nationalite" class="form-label fs-4 fw-light">Nationalité de la cible</label>
-    <input type="text" name="nationalite" class="form-control" value="<?= $cible->getNationalite() ?>"><br>
+    <fieldset>
+        <legend>Nationalité de la cible</legend>
+        <label for="Française">Française</label>
+        <input type="radio" id="Française" name="nationalite" value="France">
+        <label for="Américaine">Américaine</label>
+        <input type="radio" id="Américaine" name="nationalite" value="USA">
+        <label for="Afghane">Afghane</label>
+        <input type="radio" id="Afghane" name="nationalite" value="Afghanisthan">
+        <label for="Espagnole">Espagnole</label>
+        <input type="radio" id="Espagnole" name="nationalite" value="Espagne">
+        <label for="Anglaise">Anglaise</label>
+        <input type="radio" id="Anglaise" name="nationalite" value="Angleterre">
+        <label for="Turque">Turque</label>
+        <input type="radio" id="Turque" name="nationalite" value="Turquie">
+    </fieldset>
+    <div class="form-text">La nationalité de la cible doit être différente de celle des agents sur la mission choisie</div><br>
     <label for="number" class="form-label fs-4 fw-light">Numéro de la mission concernée</label> <!-- numéro doit exister -->
-    <input type="number" name="mission" class="form-control" value="<?= $cible->getMission() ?>"><br>
+    <input type="number" name="mission" class="form-control" value="<?= $cible->getMission() ?>">
+    <div class="form-text">Il s'agit de l'identifiant de la mission trouvable dans l'accueil</div><br>
     <button type="submit" class="btn btn-info">Soumettre</button>
 </form>
 

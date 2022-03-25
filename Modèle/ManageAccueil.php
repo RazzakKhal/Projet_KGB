@@ -1,7 +1,7 @@
 <?php
 require_once('AccesBdd.php');
 require_once('Mission.php');
-class ManageMission extends AccesBdd
+class ManageAccueil extends AccesBdd
 {
     private $mission;
 
@@ -46,7 +46,7 @@ class ManageMission extends AccesBdd
 
 
             // pour chaque mission je recupere l'id, je fais une requête avec cet id pour récupérer l'agent , je fais un set agent
-            $req2 = $pdo->prepare('SELECT code_agent FROM Agent WHERE mission_agent=:id');
+            $req2 = $pdo->prepare('SELECT code_agent, nom FROM Agent WHERE mission_agent=:id');
             $req2->bindValue(':id', $missions['id']);
             $req2->execute();
             $mesagents = $req2->fetchAll(PDO::FETCH_ASSOC);
@@ -56,7 +56,7 @@ class ManageMission extends AccesBdd
 
             //récupérer contact
 
-            $req3 = $pdo->prepare('SELECT nomcode_contact FROM Contact WHERE mission_contact=:id');
+            $req3 = $pdo->prepare('SELECT nomcode_contact, id FROM Contact WHERE mission_contact=:id');
             $req3->bindValue(':id', $missions['id']);
             $req3->execute();
             $mescontacts = $req3->fetchAll(PDO::FETCH_ASSOC);
@@ -68,7 +68,7 @@ class ManageMission extends AccesBdd
 
             //récupérer cible
 
-            $req4 = $pdo->prepare('SELECT nomcode_cible FROM Cible WHERE mission_cible=:id');
+            $req4 = $pdo->prepare('SELECT nomcode_cible, id FROM Cible WHERE mission_cible=:id');
             $req4->bindValue(':id', $missions['id']);
             $req4->execute();
             $mescibles = $req4->fetchAll(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@ class ManageMission extends AccesBdd
 
             //récupérer planque
 
-            $req5 = $pdo->prepare('SELECT code_planque FROM Planque WHERE mission_planque=:id');
+            $req5 = $pdo->prepare('SELECT code_planque, adresse FROM Planque WHERE mission_planque=:id');
             $req5->bindValue(':id', $missions['id']);
             $req5->execute();
             $mesplanques = $req5->fetchAll(PDO::FETCH_ASSOC);

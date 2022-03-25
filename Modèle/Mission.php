@@ -13,11 +13,11 @@ class Mission
     private ?string $type;
     private ?string $statut;
     private ?string $specialite;
-    private ?int $datedebut;
-    private ?int $datefin;
+    private $datedebut;
+    private $datefin;
     private  $planque = [];
 
-    public function __construct(?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, ?int $datedebut, ?int $datefin)
+    public function __construct(?string $titre, ?string $description, ?string $nomcode, ?string $pays, ?string $type, ?string $statut, ?string $specialite, $datedebut, $datefin)
     {
 
 

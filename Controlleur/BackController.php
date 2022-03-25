@@ -87,34 +87,39 @@ class BackController
     /////////////////////////////////////////////////////////////////////////////////////////////////
     public function ajouterMissionsbdd()
     {
+
         $this->Manager->Ajoutmissionbdd($_POST['titre'], $_POST['description'], $_POST['nomcode'], $_POST['pays'], $_POST['type'], $_POST['statut'], $_POST['datedebut'], $_POST['datefin'], $_POST['specialite']);
         header('Location: ' . URL . 'back/missions');
     }
 
     public function ajouterAgentsbdd()
     {
-
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteCibleAgent($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Ajoutagentbdd($_POST['code'], $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nationalite'], $_POST['mission'], $_POST['specialite']);
         header('Location: ' . URL . 'back/agents');
     }
 
     public function ajouterPlanquesbdd()
     {
-
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->paysPlanquePaysmission($_POST['mission'], $_POST['pays']);
         $this->Manager->Ajoutplanquebdd($_POST['adresse'], $_POST['pays'], $_POST['type'], $_POST['mission']);
         header('Location: ' . URL . 'back/planques');
     }
 
     public function ajouterCiblesbdd()
     {
-
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteAgentCible($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Ajoutciblebdd($_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nomcode'], $_POST['nationalite'], $_POST['mission']);
         header('Location: ' . URL . 'back/cibles');
     }
 
     public function ajouterContactsbdd()
     {
-
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteContactPaysmission($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Ajoutcontactbdd($_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nomcode'], $_POST['nationalite'], $_POST['mission']);
         header('Location: ' . URL . 'back/contacts');
     }
@@ -154,6 +159,7 @@ class BackController
 
     public function modificationAgent($id)
     {
+
         $agent = $this->Manager->recupAgentid($id);
         require_once('Vue/agents/modifagent.php');
     }
@@ -186,8 +192,10 @@ class BackController
 
     public function modificationAgentv($id)
     {
-
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteCibleAgent($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Modifagentbdd($id, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nationalite'], $_POST['mission'], $_POST['specialite']);
+        header('Location: ' . URL . 'back/agents');
     }
 
     public function modificationMissionv($id)
@@ -198,18 +206,24 @@ class BackController
 
     public function modificationContactv($id)
     {
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteContactPaysmission($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Modifcontactbdd($id, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nomcode'], $_POST['nationalite'], $_POST['mission']);
         header('Location: ' . URL . 'back/contacts');
     }
 
     public function modificationCiblev($id)
     {
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->nationaliteAgentCible($_POST['mission'], $_POST['nationalite']);
         $this->Manager->Modifciblebdd($id, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['nomcode'], $_POST['nationalite'], $_POST['mission']);
         header('Location: ' . URL . 'back/cibles');
     }
 
     public function modificationPlanquev($id)
     {
+        $this->Manager->verifmission((int)$_POST['mission']);
+        $this->Manager->paysPlanquePaysmission($_POST['mission'], $_POST['pays']);
         $this->Manager->Modifplanquebdd($id, $_POST['adresse'], $_POST['pays'], $_POST['type'], $_POST['mission']);
         header('Location: ' . URL . 'back/planques');
     }
