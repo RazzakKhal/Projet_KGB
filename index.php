@@ -1,7 +1,7 @@
 <?php
 
 // definition de la const URL qui permet d'accéder à ttes les ressources depuis la racine
-define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
+define("URL", str_replace("index.php", "", "https://projetkgb.herokuapp.com/"));
 
 require_once('Controlleur/AccueilController.php');
 require_once('Controlleur/BackController.php');
